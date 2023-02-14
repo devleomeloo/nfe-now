@@ -37,7 +37,7 @@
 			"response": []
 		},
 		{
-			"name": "Create Invoice Copy",
+			"name": "Update Invoice",
 			"request": {
 				"method": "PUT",
 				"header": [],
