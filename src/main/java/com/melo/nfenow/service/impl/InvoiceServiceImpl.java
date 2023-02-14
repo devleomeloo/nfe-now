@@ -3,6 +3,7 @@ package com.melo.nfenow.service.impl;
 import com.melo.nfenow.dto.InvoiceDTO;
 import com.melo.nfenow.entity.Invoice;
 import com.melo.nfenow.exception.InvoiceAlreadyExistsException;
+import com.melo.nfenow.exception.InvoiceNotFoundException;
 import com.melo.nfenow.mapper.InvoiceMapper;
 import com.melo.nfenow.repository.InvoiceRepository;
 import com.melo.nfenow.service.InvoiceService;
@@ -27,8 +28,17 @@ public class InvoiceServiceImpl implements InvoiceService {
         return invoiceMapper.toDTO(createdInvoice);
     }
 
+    public InvoiceDTO findById(Long id){
+        return invoiceMapper.toDTO(verifyAndGetIfExists(id));
+    }
+
     private void verifyIfExists(String serialNumber) {
         invoiceRepository.findBySerialNumber(serialNumber)
                 .ifPresent(author -> {throw new InvoiceAlreadyExistsException(serialNumber); });
+    }
+
+    public Invoice verifyAndGetIfExists(Long id) {
+        return invoiceRepository.findById(id)
+                .orElseThrow(() -> new InvoiceNotFoundException(id));
     }
 }

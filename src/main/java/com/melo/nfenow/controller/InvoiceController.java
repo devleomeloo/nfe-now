@@ -23,4 +23,10 @@ public class InvoiceController implements InvoiceControllerDocs{
             @RequestBody InvoiceDTO invoiceDTO) {
         return invoiceService.create(invoiceDTO);
     }
+
+    @GetMapping("{id}")
+    public InvoiceDTO findById(@PathVariable Long id) {
+        return invoiceService.findById(id);
+    }
+
 }

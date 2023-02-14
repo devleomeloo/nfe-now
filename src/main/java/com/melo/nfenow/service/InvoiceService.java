@@ -5,4 +5,6 @@ import com.melo.nfenow.dto.InvoiceDTO;
 public interface InvoiceService {
 
     InvoiceDTO create(InvoiceDTO invoice);
+
+    InvoiceDTO findById(Long id);
 }
