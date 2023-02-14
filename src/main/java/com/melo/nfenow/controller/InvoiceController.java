@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/invoices")
 public class InvoiceController implements InvoiceControllerDocs{
@@ -27,6 +29,11 @@ public class InvoiceController implements InvoiceControllerDocs{
     @GetMapping("{id}")
     public InvoiceDTO findById(@PathVariable Long id) {
         return invoiceService.findById(id);
+    }
+
+    @GetMapping
+    public List<InvoiceDTO> findAll() {
+        return invoiceService.findAll();
     }
 
 }

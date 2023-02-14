@@ -9,6 +9,8 @@ import com.melo.nfenow.repository.InvoiceRepository;
 import com.melo.nfenow.service.InvoiceService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class InvoiceServiceImpl implements InvoiceService {
 
@@ -30,6 +32,13 @@ public class InvoiceServiceImpl implements InvoiceService {
 
     public InvoiceDTO findById(Long id){
         return invoiceMapper.toDTO(verifyAndGetIfExists(id));
+    }
+
+    public List<InvoiceDTO> findAll(){
+        return invoiceRepository.findAll()
+                .stream()
+                .map(invoiceMapper::toDTO)
+                .toList();
     }
 
     private void verifyIfExists(String serialNumber) {

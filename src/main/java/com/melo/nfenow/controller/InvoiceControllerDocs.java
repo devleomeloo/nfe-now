@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
+import java.util.List;
+
 @Api("Invoices")
 public interface InvoiceControllerDocs {
 
@@ -21,4 +23,10 @@ public interface InvoiceControllerDocs {
             @ApiResponse(code = 404, message = "Invoice not found error code ")
     })
     InvoiceDTO findById(Long id);
+
+    @ApiOperation(value = "List all invoices registered")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Return all registered invoices")
+    })
+    List<InvoiceDTO> findAll();
 }
