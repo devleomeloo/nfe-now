@@ -17,12 +17,20 @@ public interface InvoiceControllerDocs {
     })
     InvoiceDTO create(InvoiceDTO invoiceDTO);
 
+    @ApiOperation(value = "Invoice update operation")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Invoice by id successfully updated"),
+            @ApiResponse(code = 404, message = "Invoice not found error")
+    })
+    InvoiceDTO updateByIdAndUser(Long invoiceId, InvoiceDTO invoiceDTO);
+
+
     @ApiOperation(value = "Find Invoice by id operation")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success - Invoice found"),
             @ApiResponse(code = 404, message = "Invoice not found error code ")
     })
-    InvoiceDTO findById(Long id);
+    InvoiceDTO findById(Long invoiceId);
 
     @ApiOperation(value = "List all invoices registered")
     @ApiResponses(value = {
@@ -35,5 +43,5 @@ public interface InvoiceControllerDocs {
             @ApiResponse(code = 204, message = "Success Invoice deleted"),
             @ApiResponse(code = 404, message = "Invoice not found error code ")
     })
-    void delete(Long id);
+    void delete(Long invoiceId);
 }

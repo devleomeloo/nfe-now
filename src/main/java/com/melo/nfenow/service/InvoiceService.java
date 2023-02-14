@@ -8,9 +8,11 @@ public interface InvoiceService {
 
     InvoiceDTO create(InvoiceDTO invoice);
 
-    InvoiceDTO findById(Long id);
+    InvoiceDTO updateById(Long invoiceId, InvoiceDTO invoiceDTO);
+
+    InvoiceDTO findById(Long invoiceId);
 
     List<InvoiceDTO> findAll();
 
-    void delete(Long id);
+    void delete(Long invoiceId);
 }

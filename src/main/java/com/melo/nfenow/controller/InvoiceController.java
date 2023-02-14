@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/invoices")
-public class InvoiceController implements InvoiceControllerDocs{
+public class InvoiceController implements InvoiceControllerDocs {
 
     private InvoiceService invoiceService;
 
@@ -26,9 +26,16 @@ public class InvoiceController implements InvoiceControllerDocs{
         return invoiceService.create(invoiceDTO);
     }
 
-    @GetMapping("{id}")
-    public InvoiceDTO findById(@PathVariable Long id) {
-        return invoiceService.findById(id);
+    @PutMapping("/{invoiceId}")
+    public InvoiceDTO updateByIdAndUser(
+            @PathVariable Long invoiceId,
+            @RequestBody InvoiceDTO invoiceDTO) {
+        return invoiceService.updateById(invoiceId, invoiceDTO);
+    }
+
+    @GetMapping("{invoiceId}")
+    public InvoiceDTO findById(@PathVariable Long invoiceId) {
+        return invoiceService.findById(invoiceId);
     }
 
     @GetMapping
@@ -36,10 +43,10 @@ public class InvoiceController implements InvoiceControllerDocs{
         return invoiceService.findAll();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{invoiceId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(
-            @PathVariable Long id) {
-        invoiceService.delete(id);
+            @PathVariable Long invoiceId) {
+        invoiceService.delete(invoiceId);
     }
 }
