@@ -4,10 +4,9 @@
 <h3>Documentação:</h3>
     Há uma pasta na raiz do projeto chamada "postman-collection", contendo a chamada de todos os recursos via localhost.
     Para abrir o Swagger da API, se faz necessario rodar o projeto e acessar o seguinte link:
-    
-    ```
+
     http://localhost:8090/swagger-ui.html#/
-    ```
+    
 <h3>Database</h3>
     Foi utilizado o mySql como servidor de banco de dados. Para criaçao das tabelas e suas respectivas colunas, foi
     utilizado o Spring JPA. 
