@@ -13,5 +13,5 @@ public interface InvoiceControllerDocs {
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Success - Invoice created")
     })
-    InvoiceDTO create(InvoiceDTO authorDTO);
+    InvoiceDTO create(InvoiceDTO invoiceDTO);
 }

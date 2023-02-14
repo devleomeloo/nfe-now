@@ -9,7 +9,6 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class InvoiceDTO {
-    private Long noteNumber;
     private String cnpj;
     private String address;
     private String businessName;
