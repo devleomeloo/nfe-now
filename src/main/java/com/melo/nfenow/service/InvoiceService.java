@@ -11,4 +11,6 @@ public interface InvoiceService {
     InvoiceDTO findById(Long id);
 
     List<InvoiceDTO> findAll();
+
+    void delete(Long id);
 }

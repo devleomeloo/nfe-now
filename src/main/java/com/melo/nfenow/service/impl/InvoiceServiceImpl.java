@@ -41,9 +41,14 @@ public class InvoiceServiceImpl implements InvoiceService {
                 .toList();
     }
 
+    public void delete(Long id){
+        verifyAndGetIfExists(id);
+        invoiceRepository.deleteById(id);
+    }
+
     private void verifyIfExists(String serialNumber) {
         invoiceRepository.findBySerialNumber(serialNumber)
-                .ifPresent(author -> {throw new InvoiceAlreadyExistsException(serialNumber); });
+                .ifPresent(invoice -> {throw new InvoiceAlreadyExistsException(serialNumber); });
     }
 
     public Invoice verifyAndGetIfExists(Long id) {

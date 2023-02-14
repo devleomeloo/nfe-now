@@ -29,4 +29,11 @@ public interface InvoiceControllerDocs {
             @ApiResponse(code = 200, message = "Return all registered invoices")
     })
     List<InvoiceDTO> findAll();
+
+    @ApiOperation(value = "Delete Invoice by id operation")
+    @ApiResponses(value = {
+            @ApiResponse(code = 204, message = "Success Invoice deleted"),
+            @ApiResponse(code = 404, message = "Invoice not found error code ")
+    })
+    void delete(Long id);
 }

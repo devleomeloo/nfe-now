@@ -36,4 +36,10 @@ public class InvoiceController implements InvoiceControllerDocs{
         return invoiceService.findAll();
     }
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(
+            @PathVariable Long id) {
+        invoiceService.delete(id);
+    }
 }
