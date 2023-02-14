@@ -14,4 +14,11 @@ public interface InvoiceControllerDocs {
             @ApiResponse(code = 201, message = "Success - Invoice created")
     })
     InvoiceDTO create(InvoiceDTO invoiceDTO);
+
+    @ApiOperation(value = "Find Invoice by id operation")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success - Invoice found"),
+            @ApiResponse(code = 404, message = "Invoice not found error code ")
+    })
+    InvoiceDTO findById(Long id);
 }
