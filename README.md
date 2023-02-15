@@ -19,3 +19,9 @@ O objetivo do projeto 'Invoice API' é cadastrar, consultar, atualizar e deletar
 * Para consultar uma nota fiscal, é necessário informar o número da nota fiscal no path. Caso não exista, será retornado um erro de Not Found 404.
 * Para atualizar uma nota fiscal, é necessário informar o número da nota fiscal no path. Caso não exista, será retornado um erro de Not Found 404.
 * Para deletar uma nota fiscal, é necessário informar o número da nota fiscal no path. Caso não exista, será retornado um erro de Not Found 404.
+
+<h3>Segurança</h3>
+
+* Para acessar os endpoints da API, foi criado uma autenticação via Basic Authorization.
+* Usúario: Beesby
+* Senha: 2019
