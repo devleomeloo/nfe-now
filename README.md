@@ -10,7 +10,7 @@ O objetivo do projeto 'Invoice API' é cadastrar, consultar, atualizar e deletar
     
 <h3>Database</h3>
 
-* Foi utilizado o mySql como servidor de banco de dados. Para criação das tabelas e suas respectivas colunas, foi utilizado o Spring JPA.
+* Foi utilizado o mySql na versão 8.0 como servidor de banco de dados. Para criação das tabelas e suas respectivas colunas, foi utilizado o Spring JPA.
 * Caso necessário, há uma pasta na raiz do projeto chamada 'sql_script' com o script para criação do banco de dados e tabela.
 
 <h3>Regras</h3>
