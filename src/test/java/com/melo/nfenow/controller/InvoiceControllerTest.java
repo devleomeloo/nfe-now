@@ -46,7 +46,7 @@ public class InvoiceControllerTest {
     }
 
     @Test
-    void whenPOSTIsCalledThenStatusCreatedShouldBeReturned() throws Exception {
+    void testCreateNewInvoiceController() throws Exception {
 
         InvoiceDTO expectedCreatedInvoice = invoiceBuilder.buildInvoiceDTO();
 

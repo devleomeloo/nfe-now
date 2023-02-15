@@ -38,7 +38,7 @@ public class InvoiceServiceTest {
     }
 
     @Test
-    void testCreateNewInvoice() {
+    void testCreateNewInvoiceService() {
 
         //given
         InvoiceDTO expectedInvoiceToCreateDTO = invoiceBuilder.buildInvoiceDTO();
