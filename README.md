@@ -25,3 +25,9 @@ O objetivo do projeto 'Invoice API' é cadastrar, consultar, atualizar e deletar
 * Para acessar os endpoints da API, foi criado uma autenticação via Basic Authorization.
 * Usúario: Beesby
 * Senha: 2019
+
+<h3>Testes Unitarios</h3>
+
+Dentro do projeto, foi desenvolvido os seguintes testes unitários:
+* Controller: Teste realizando uma chamada POST de sucesso no path /api/v1/invoices.
+* Service: Teste salvando uma nova nota fiscal através do Mockito.
